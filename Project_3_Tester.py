@@ -3,13 +3,11 @@ import glob
 import os
 import shlex
 
-currentFile = 'Lab4Test-Script'#Name of script file
+currentFile = 'Project_3_Tester'#Name of script file
 realPath = os.path.realpath(currentFile)
 dirPath = os.path.dirname(realPath)
 
-labname = 'network_destruction' # lab4 only has one main file
-number_of_nodes = '20'
-input_file_name = 'Project3Test'
+labname = 'NetworkDestruction'
 
 # Take the name of all the .zip files into a list
 submissions=glob.glob(dirPath + "/*.zip")
@@ -24,11 +22,11 @@ subprocess.call('rm *.java', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
 subprocess.call('rm *.class', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
 
 # Run the test case of the given number
-def runTestCase(test_num, test_out, test_ans):
-    subprocess.call('java ' + labname + ' ' + number_of_nodes + ' input/' + input_file_name + test_num + '.txt ' + '>' + '\"' + test_out + '\"', shell=True)
+def runTestCase(command, test_out, test_ans):
+    subprocess.call('java ' + labname + ' ' + command + ' ' + '>' + '\"output/' + test_out + '\"', shell=True)
 
     # Compare compressed and the decompressed output file with the original file
-    compare_command = 'diff -w -B ' + '\"' + test_ans + '\"' + ' ' + '\"' + test_out + '\"'
+    compare_command = 'diff -w -B ' + '\"ans/' + test_ans + '\"' + ' ' + '\"output/' + test_out + '\"'
     compare_command = shlex.split(compare_command)
     compare_result = subprocess.Popen(compare_command, stdout=subprocess.PIPE).communicate()[0].rstrip().decode(
         'ascii')
@@ -54,37 +52,26 @@ def testSubmission(submission, output_case_directory):
     test_cases = glob.glob(dirPath + output_case_directory + '*.ans')
     test_cases.sort()
 
-    error_dict = build_error_dict("error_msgs.txt")
+    commands = ["-r 2 4 destruction_example_1.txt", "-d 4 destruction_example_1.txt", "-d 6 destruction_example_2.txt", 
+    "-r 2 6 destruction_example_2.txt", "-c 10 destruction_example_3.txt", "-r 3 10 destruction_example_3.txt"]
+    case_numbers = [item for item in range(1, len(commands)+1)]
 
     # Run tests on each ouput directory file
-    for test_case in test_cases:
+    for (command, case_no) in zip(commands, case_numbers):
 
-        test_num = str(int(test_case[-6:-4]))
-        testHeader = test_case[:-4]
+        print("Testing Project 3, case #"+str(case_no))
+        ans_file = "0"+str(case_no)+ans_file_extension
+        out_file = "0"+str(case_no)+out_file_extension
 
-        out_file = testHeader + out_file_extension
-        ans_file = testHeader + ans_file_extension
-
-        print('\nCurrently testing Lab4, test case #' + test_num)
-
-        if runTestCase(test_num, out_file, ans_file) is True:
+        if runTestCase(command, out_file, ans_file) is True:
             print("SUCCESS!")
             correctCases += 1
         else:
-            print("WRONG! Error in: {}".format(error_dict[test_num]))
+            print("WRONG! Error ")
 
         totalCases += 1
 
     return student_id, correctCases, totalCases
-
-# Build a dictionary of case numbers to error messages
-def build_error_dict(filename):
-    errors = {}
-    with open(filename) as fh:
-        for line in fh:
-            number, description = line.strip().split('\t')
-            errors[number] = description.strip()
-    return errors
 
 # Iterate on every .zip file
 for currentZip in submissions:
@@ -102,4 +89,4 @@ for currentZip in submissions:
     FNULL = open(os.devnull, 'w')
     subprocess.call('rm *.java', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
     subprocess.call('rm *.class', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
-    subprocess.call('rm output/*.out', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)
+    # subprocess.call('rm output/*.out', shell=True, stdout=FNULL, stderr=subprocess.STDOUT)

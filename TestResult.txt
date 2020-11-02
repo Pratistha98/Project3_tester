@@ -1,0 +1,17 @@
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 6/6
+NetId: test.java.zip    Evaluation Result: 1/6
+NetId: test.java.zip    Evaluation Result: 0/6
+NetId: test.java.zip    Evaluation Result: 0/6
+NetId: test.java.zip    Evaluation Result: 0/6
+NetId: test.java.zip    Evaluation Result: 0/6
+NetId: test.zip    Evaluation Result: 6/6
+NetId: NetworkDestruction    Evaluation Result: 6/6
+NetId: NetworkDestruction    Evaluation Result: 6/6
+NetId: NetworkDestruction    Evaluation Result: 6/6
