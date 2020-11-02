@@ -2,6 +2,7 @@ Project 3 Tester
 Pratistha Maharjan
 Bartlomiej Jezierski
 
+Description for Project 3 Tester 
 The tester file compares the output file generated from the running the script and compares with the .ans file in ans folder. The output file generated from running the script will be placed in the output folder. 
 
 To run tests for a lab on student' submisson: 
