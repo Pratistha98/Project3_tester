@@ -9,7 +9,7 @@ To run tests for a lab on student' submisson:
 1) Place the zipped files in Project3_tester-main. 
 //TODO: change the name of the labname in line 10 depending on the name given in the project 3 handout 
 
-2) From the terminal, run the script in Project3_tester-main
+2) From the terminal, run the script inside the folder (Project3_tester-main):
     python Project_3_Tester.py 
 
 **DO not unzip the files and place in the folder"
