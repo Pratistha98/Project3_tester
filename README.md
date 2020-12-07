@@ -27,7 +27,7 @@ Brief desciption of the NetworkDestruction.java - test functionality
 
 Test Case 1:
 
-java NetworkDestruction -r 2 4 destruction_example_1.txt
+java StopContagion -r 2 4 destruction_example_1.txt
 
 10 63
 16 51
@@ -37,7 +37,7 @@ java NetworkDestruction -r 2 4 destruction_example_1.txt
 
 Test Case 2:
 
-java NetworkDestruction -d 4 destruction_example_1.txt
+java StopContagion -d 4 destruction_example_1.txt
 
 25 6
 5 5
@@ -47,7 +47,7 @@ java NetworkDestruction -d 4 destruction_example_1.txt
 
 Test Case 3:
 
-java NetworkDestruction -d 6 destruction_example_2.txt
+java StopContagion -d 6 destruction_example_2.txt
 
 66 148
 12 72
@@ -59,7 +59,7 @@ java NetworkDestruction -d 6 destruction_example_2.txt
 
 Test Case 4:
 
-java NetworkDestruction -r 2 6 destruction_example_2.txt
+java StopContagion -r 2 6 destruction_example_2.txt
 
 7 5
 12 5
@@ -71,7 +71,7 @@ java NetworkDestruction -r 2 6 destruction_example_2.txt
 
 Test Case 5:
 
-java NetworkDestruction -c 10 destruction_example_3.txt
+java StopContagion -c 10 destruction_example_3.txt
 
 114 7
 105 6
@@ -87,7 +87,7 @@ java NetworkDestruction -c 10 destruction_example_3.txt
 
 Test Case 6:
 
-java NetworkDestruction -r 3 10 destruction_example_3.txt
+java StopContagion -r 3 10 destruction_example_3.txt
 
 114 270
 105 125
