@@ -7,7 +7,7 @@ currentFile = 'Project_3_Tester'#Name of script file
 realPath = os.path.realpath(currentFile)
 dirPath = os.path.dirname(realPath)
 
-labname = 'NetworkDestruction'
+labname = 'StopContagion'
 
 # Take the name of all the .zip files into a list
 submissions=glob.glob(dirPath + "/*.zip")
@@ -53,7 +53,7 @@ def testSubmission(submission, output_case_directory):
     test_cases.sort()
 
     commands = ["-r 2 4 destruction_example_1.txt", "-d 4 destruction_example_1.txt", "-d 6 destruction_example_2.txt", 
-    "-r 2 6 destruction_example_2.txt", "-c 10 destruction_example_3.txt", "-r 3 10 destruction_example_3.txt"]
+    "-r 2 6 destruction_example_2.txt", "-d 10 destruction_example_3.txt", "-r 3 10 destruction_example_3.txt"]
     case_numbers = [item for item in range(1, len(commands)+1)]
 
     # Run tests on each ouput directory file
